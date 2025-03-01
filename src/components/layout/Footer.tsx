@@ -76,7 +76,7 @@ const Footer = () => {
       <div className={styles.copyrightWrapper}>
         <div className={styles.copyrightContainer}>
           <div className={styles.copyrightLeft}>
-            Copyright All Right Reserved {new Date().getFullYear()}, Kingster University
+            Copyright All Right Reserved {new Date().getFullYear()}, MIC ASAS
           </div>
           <div className={styles.copyrightRight}>
             <div className={styles.socialNetwork}>
@@ -92,12 +92,12 @@ const Footer = () => {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </a>
-              <a href="https://plus.google.com" target="_blank" rel="noopener noreferrer">
+              {/* <a href="https://plus.google.com" target="_blank" rel="noopener noreferrer">
                 <FaGoogle />
-              </a>
-              <a href="https://skype.com" target="_blank" rel="noopener noreferrer">
+              </a> */}
+              {/* <a href="https://skype.com" target="_blank" rel="noopener noreferrer">
                 <FaSkype />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

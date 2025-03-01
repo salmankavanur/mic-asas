@@ -1,0 +1,138 @@
+// src/styles/components/VideoTour.module.scss
+@import '../variables';
+
+.videoTourSection {
+  background-image: url('/images/video-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 150px 0;
+  text-align: center;
+  position: relative;
+  color: white;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.videoTourContent {
+  text-align: center;
+}
+
+.playButton {
+  display: inline-block;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 30px;
+  }
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 16px;
+  }
+}
+
+// Video Modal
+.videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoModalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.videoModalContent {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #000;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

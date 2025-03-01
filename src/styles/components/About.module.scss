@@ -1,0 +1,78 @@
+// src/styles/components/About.module.scss
+@import '../variables';
+
+.aboutSection {
+  background-image: url('/images/about-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 120px 0;
+  color: white;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: 80px 0;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.leftColumn {
+  .logo {
+    margin-bottom: 30px;
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0;
+  }
+}
+
+.rightColumn {
+  .description {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 600px;
+  }
+  
+  .readMoreButton {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: $transition-base;
+    
+    .arrowIcon {
+      margin-left: 8px;
+      transition: $transition-base;
+    }
+    
+    &:hover {
+      color: $primary-color;
+      
+      .arrowIcon {
+        transform: translateX(5px);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+// src/styles/components/QuickLinks.module.scss
+@import '../variables';
+
+.quickLinksSection {
+  padding: 50px 30px;
+  background-color: $tertiary-color;
+  height: 100%;
+}
+
+.quickLinksHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.linkIcon {
+  color: white;
+  font-size: 24px;
+}
+
+.quickLinksTitle {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.linksList {
+  .linkItem {
+    margin-bottom: 10px;
+  }
+  
+  .link {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    transition: $transition-base;
+    display: block;
+    padding: 5px 0;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.7);
+      padding-left: 5px;
+    }
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 10px 0;
+}

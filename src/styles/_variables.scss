@@ -1,0 +1,77 @@
+// src/styles/_variables.scss
+
+// Colors
+$primary-color: #3db166;  // Green
+$secondary-color: #192f59;  // Dark Blue
+$tertiary-color: #1e73be;  // Medium Blue
+$quaternary-color: #313131;  // Dark Gray
+
+// Text colors
+$text-color: #666;
+$heading-color: #333;
+$light-text: #fff;
+$dark-text: #222;
+
+// Background colors
+$bg-color: #fff;
+$bg-light: #f7f7f7;
+$bg-dark: #1c2434;
+
+// Border colors
+$border-color: #e9e9e9;
+$dark-border: #dddddd;
+
+// Specific section colors
+$top-bar-bg: #192f59;  // Dark Blue
+$header-bg: #fff;
+$footer-bg: #1e2436;
+$footer-text: #a9b2bd;
+
+// Font sizes
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 30px;
+$spacing-xl: 50px;
+
+// Breakpoints
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+
+// Container widths
+$container-sm: 540px;
+$container-md: 720px;
+$container-lg: 960px;
+$container-xl: 1140px;
+
+// Border radius
+$border-radius-sm: 3px;
+$border-radius: 5px;
+$border-radius-lg: 8px;
+
+// Shadow
+$box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+// Transitions
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.2s ease;
+$transition-slow: all 0.5s ease;
+
+// Z-index values
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;

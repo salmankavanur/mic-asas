@@ -1,0 +1,44 @@
+// src/styles/components/Apply.module.scss
+@import '../variables';
+
+.applySection {
+  background-color: $primary-color;
+  color: white;
+  padding: 60px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition-base;
+  
+  &:hover {
+    background-color: darken($primary-color, 5%);
+  }
+}
+
+.applyLink {
+  display: block;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.applyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.applyIcon {
+  margin-bottom: 10px;
+}
+
+.applyTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}

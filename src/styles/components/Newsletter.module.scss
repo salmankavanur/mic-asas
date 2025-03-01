@@ -1,0 +1,93 @@
+// src/styles/components/Newsletter.module.scss
+@import '../variables';
+
+.newsletterSection {
+  padding: 60px 20px;
+  background-color: $secondary-color;
+  color: white;
+  background-image: url('/images/newsletter-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.newsletterContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.newsletterIcon {
+  margin-bottom: 20px;
+}
+
+.newsletterTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.newsletterDescription {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+}
+
+.newsletterForm {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.emailInput {
+  flex: 1;
+  height: 50px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.submitButton {
+  width: 120px;
+  background-color: $primary-color;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: $transition-base;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+  
+  &:disabled {
+    background-color: lighten($primary-color, 20%);
+    cursor: not-allowed;
+  }
+}
+
+.message {
+  font-size: 14px;
+  margin-top: 10px;
+  color: white;
+}

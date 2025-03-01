@@ -1,0 +1,86 @@
+// src/styles/components/Admission.module.scss
+@import '../variables';
+
+.admissionSection {
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admissionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.leftColumn {
+  background-image: url('/images/admission-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  
+  @media (max-width: $breakpoint-md) {
+    min-height: 300px;
+  }
+}
+
+.rightColumn {
+  background-color: $secondary-color;
+  background-image: url('/images/admission-right-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 90px 60px;
+  display: flex;
+  align-items: center;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: 60px 30px;
+  }
+}
+
+.contentWrapper {
+  max-width: 500px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #acb6bf;
+  margin-bottom: 25px;
+}
+
+.description {
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.applyButton {
+  display: inline-block;
+  padding: 13px 28px;
+  background-color: $primary-color;
+  color: white;
+  font-weight: 600;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    color: white;
+  }
+}

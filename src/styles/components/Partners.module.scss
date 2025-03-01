@@ -1,0 +1,51 @@
+// src/styles/components/Partners.module.scss
+@import '../variables';
+
+.partnersSection {
+  padding: 50px 0;
+  background-color: white;
+  border-top: 1px solid $border-color;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.partnersList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  
+  @media (max-width: $breakpoint-md) {
+    justify-content: center;
+  }
+}
+
+.partnerItem {
+  flex: 0 0 auto;
+  transition: $transition-base;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.partnerLink {
+  display: block;
+}
+
+.partnerLogo {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.7;
+  transition: $transition-base;
+  
+  &:hover {
+    opacity: 1;
+  }
+}

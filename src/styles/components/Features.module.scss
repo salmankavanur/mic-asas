@@ -1,0 +1,67 @@
+// src/styles/components/Features.module.scss
+@import '../variables';
+
+.featuresSection {
+  background-color: white;
+  padding: 80px 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featureItem {
+  text-align: center;
+  padding: 30px 20px;
+  transition: $transition-base;
+  
+  &:hover {
+    box-shadow: $box-shadow;
+    transform: translateY(-5px);
+  }
+}
+
+.featureIcon {
+  margin-bottom: 20px;
+}
+
+.featureContent {
+  .featureTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .featureDescription {
+    color: $text-color;
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+  
+  .learnMoreLink {
+    color: $primary-color;
+    font-weight: 600;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,277 @@
+// src/styles/components/Header.module.scss
+@import '../variables';
+
+// Top Bar
+.topBar {
+  background-color: $top-bar-bg;
+  color: $light-text;
+  padding: 10px 0;
+  font-size: $font-size-sm;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.topBarInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.topBarLeft {
+  display: flex;
+  gap: 20px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.topBarMenu {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+
+  li a {
+    color: $light-text;
+    text-decoration: none;
+    transition: $transition-base;
+
+    &:hover {
+      color: darken($light-text, 15%);
+    }
+  }
+}
+
+.supportButton {
+  padding: 5px 15px;
+  background-color: $primary-color;
+  color: $light-text;
+  border-radius: $border-radius-sm;
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    color: $light-text;
+  }
+}
+
+// Main Header
+.header {
+  background-color: $header-bg;
+  box-shadow: $box-shadow;
+  position: relative;
+  z-index: 100;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 0;
+    animation: slideDown 0.5s ease forwards;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  a {
+    display: block;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.mainMenu {
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    margin: 0;
+
+    li {
+      position: relative;
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        color: $dark-text;
+        font-weight: 500;
+        text-decoration: none;
+        transition: $transition-base;
+        gap: 5px;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      &.menuItemHasChildren {
+        &:hover {
+          > .subMenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.subMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background-color: $bg-color;
+  box-shadow: $box-shadow-lg;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: $transition-base;
+  z-index: 100;
+
+  li {
+    display: block;
+    width: 100%;
+
+    a {
+      padding: 8px 20px;
+      display: block;
+      font-weight: 400;
+      color: $text-color;
+
+      &:hover {
+        background-color: $bg-light;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.search {
+  margin-left: 20px;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: $dark-text;
+  transition: $transition-base;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// Mobile Menu Toggle
+.mobileMenuToggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  
+  @media (max-width: $breakpoint-lg) {
+    display: block;
+  }
+}
+
+// Mobile Menu
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: $dark-text;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+  
+  @media (max-width: $breakpoint-lg) {
+    display: block;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      
+      a {
+        display: block;
+        color: $light-text;
+        padding: 12px 0;
+        text-decoration: none;
+        
+        &:hover {
+          color: $primary-color;
+        }
+      }
+      
+      ul {
+        margin-left: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: none;
+        
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+}

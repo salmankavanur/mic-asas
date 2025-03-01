@@ -1,0 +1,82 @@
+// src/styles/components/Services.module.scss
+@import '../variables';
+
+.servicesSection {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 20;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.serviceItem {
+  padding: 45px 20px;
+  border-right: 1px solid $border-color;
+  
+  &:last-child {
+    border-right: none;
+  }
+  
+  @media (max-width: $breakpoint-md) {
+    border-right: none;
+    border-bottom: 1px solid $border-color;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.serviceLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: $transition-base;
+  
+  &:hover {
+    .serviceTitle {
+      color: $primary-color;
+    }
+  }
+}
+
+.serviceIcon {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceContent {
+  .serviceTitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: $tertiary-color;
+    margin: 0 0 5px;
+    transition: $transition-base;
+  }
+  
+  .serviceCaption {
+    font-size: 13px;
+    color: $text-color;
+  }
+}

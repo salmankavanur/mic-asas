@@ -1,0 +1,60 @@
+// src/styles/components/Twitter.module.scss
+@import '../variables';
+
+.twitterSection {
+  background-color: $tertiary-color;
+  color: white;
+  padding: 60px 30px;
+  height: 100%;
+}
+
+.twitterContent {
+  max-width: 100%;
+  
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    color: white;
+    opacity: 0.7;
+    
+    &:hover {
+      opacity: 1;
+    }
+    
+    &:after {
+      font-size: 16px;
+    }
+  }
+}
+
+.tweetItem {
+  padding: 20px 10px;
+}
+
+.tweetContent {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.tweetDate {
+  font-size: 14px;
+  
+  a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    
+    &:hover {
+      color: white;
+    }
+  }
+}

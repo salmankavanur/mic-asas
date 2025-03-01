@@ -19,14 +19,17 @@ const Footer = () => {
                 height={50} 
               />
               <p>
-                Box 35300
+              Academy of sharia and advanced studies (ASAS)
+               is a new setup of Malik bin deenar Islamic Complex (MIC).
+                
+                {/* Box 35300
                 <br /> 1810 Campus Way NE
-                <br /> Bothell, WA 98011-8246
+                <br /> Bothell, WA 98011-8246 */}
               </p>
               <p>
-                +1-2534-4456-345
+              0487 2445828
                 <br />
-                <a href="mailto:admin@kingsteruni.edu">admin@kingsteruni.edu</a>
+                <a href="mailto:micthrissur@gmail.com">micthrissur@gmail.com</a>
               </p>
               <div className={styles.divider}></div>
             </div>

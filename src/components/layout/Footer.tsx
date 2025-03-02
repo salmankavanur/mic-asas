@@ -13,8 +13,8 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <div className={styles.footerWidget}>
               <Image 
-                src="/images/footer-logo.png" 
-                alt="Kingster University" 
+                src="/images/logo.webp" 
+                alt="MIC ASAS Thrissur" 
                 width={220} 
                 height={50} 
               />

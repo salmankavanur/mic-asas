@@ -107,8 +107,8 @@ const CourseSearch = () => {
                   className={styles.formControl}
                 >
                   <option value="">Campus</option>
-                  <option value="admans-hall">Adman's Hall</option>
-                  <option value="kingsters-80">Kingster's 80</option>
+                  <option value="admans-hall">Adman&apos;s Hall</option>
+                  <option value="kingsters-80">Kingster&apos;s 80</option>
                   <option value="ku2-hill">KU2 Hill</option>
                 </select>
               </div>

@@ -3,7 +3,6 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { FaPlay } from 'react-icons/fa'
 import styles from '@/styles/components/VideoTour.module.scss'
 
 const VideoTour = () => {

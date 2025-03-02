@@ -69,7 +69,7 @@ const Events: React.FC = () => {
             <p className={styles.description}>
               The Campaign for the Kingster University is the 
               <strong> largest fundraising campaign in history.</strong> With a historic $1 billion goal, 
-              the campaign is expanding U of T's global leadership capacity.
+              the campaign is expanding U of T&apos;s global leadership capacity.
             </p>
             <Link href="/donate" className={styles.donateButton}>
               <span className={styles.heartIcon}>❤</span> Become a donor

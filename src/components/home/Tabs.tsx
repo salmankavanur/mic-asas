@@ -77,8 +77,6 @@ const Tabs = () => {
     setIsVideoModalOpen(false)
   }
 
-  const activeTabData = tabsData.find(tab => tab.id === activeTab)
-
   return (
     <section className={styles.tabsSection}>
       <div className={styles.container}>

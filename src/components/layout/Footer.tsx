@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaGoogle, FaSkype } from 'react-icons/fa'
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 import styles from '@/styles/components/Footer.module.scss'
 
 const Footer = () => {
@@ -21,10 +21,6 @@ const Footer = () => {
               <p>
               Academy of sharia and advanced studies (ASAS)
                is a new setup of Malik bin deenar Islamic Complex (MIC).
-                
-                {/* Box 35300
-                <br /> 1810 Campus Way NE
-                <br /> Bothell, WA 98011-8246 */}
               </p>
               <p>
               0487 2445828
@@ -95,12 +91,6 @@ const Footer = () => {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </a>
-              {/* <a href="https://plus.google.com" target="_blank" rel="noopener noreferrer">
-                <FaGoogle />
-              </a> */}
-              {/* <a href="https://skype.com" target="_blank" rel="noopener noreferrer">
-                <FaSkype />
-              </a> */}
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ const Newsletter = () => {
       await new Promise(resolve => setTimeout(resolve, 1000))
       setMessage('Thank you for subscribing!')
       setEmail('')
-    } catch (error) {
+    } catch {
       setMessage('An error occurred. Please try again.')
     } finally {
       setIsSubmitting(false)

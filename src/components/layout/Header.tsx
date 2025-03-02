@@ -55,8 +55,8 @@ const Header = () => {
             <div className={styles.logo}>
               <Link href="/">
                 <Image 
-                  src="/images/logo.png" 
-                  alt="Kingster University" 
+                  src="/images/logo.webp" 
+                  alt="MIC ASAS" 
                   width={180} 
                   height={40} 
                   priority

@@ -34,8 +34,8 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.topBarInner}>
             <div className={styles.topBarLeft}>
-              <span><FaEnvelopeOpen /> contact@KUTheme.edu</span>
-              <span><FaPhone /> +1-3435-2356-222</span>
+              <span><FaEnvelopeOpen /> micthrissur@gmail.com </span>
+              <span><FaPhone /> 0487 244 58 28 </span>
             </div>
             <div className={styles.topBarRight}>
               <ul className={styles.topBarMenu}>

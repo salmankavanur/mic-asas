@@ -14,7 +14,7 @@ const Admission = () => {
           <div className={styles.rightColumn}>
             <div className={styles.contentWrapper}>
               <h2 className={styles.title}>Apply for Admission</h2>
-              <p className={styles.subtitle}>Fall 2024 applications are now open</p>
+              <p className={styles.subtitle}>Fall 2025 applications are now open</p>
               <p className={styles.description}>
                 We don't just give students an education and experiences that set them up for success in a career. 
                 We help them succeed in their career—to discover a field they're passionate about and dare to lead it.

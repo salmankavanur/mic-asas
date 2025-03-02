@@ -1,11 +1,23 @@
 // src/components/home/Events.tsx
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaLongArrowAltRight } from 'react-icons/fa'
-import styles from '@/styles/components/Events.module.scss'
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FaClock, FaMapMarkerAlt, FaLongArrowAltRight } from 'react-icons/fa';
+import styles from '@/styles/components/Events.module.scss';
 
-const eventsData = [
+// Define TypeScript Interface for Events
+interface EventItem {
+  id: number;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  featured: boolean;
+  image?: string;
+}
+
+// Event Data Array
+const eventsData: EventItem[] = [
   {
     id: 1,
     title: "Reunion Event: Kingster's Alumni Golf Tour",
@@ -31,25 +43,25 @@ const eventsData = [
     location: "Kingster Grand Hall",
     featured: false
   }
-]
+];
 
-const Events = () => {
+const Events: React.FC = () => {
   // Separate featured event from regular events
-  const featuredEvent = eventsData.find(event => event.featured)
-  const regularEvents = eventsData.filter(event => !event.featured)
+  const featuredEvent = eventsData.find(event => event.featured);
+  const regularEvents = eventsData.filter(event => !event.featured);
 
   return (
     <div className={styles.eventsSection}>
       <div className={styles.container}>
-        {/* Featured Event - Donation */}
+        {/* Featured Event */}
         {featuredEvent && (
           <div className={styles.featuredEvent}>
             <div className={styles.imageWrapper}>
-              <Image 
-                src={featuredEvent.image} 
-                alt={featuredEvent.title} 
-                width={700} 
-                height={372} 
+              <Image
+                src={featuredEvent.image ?? '/images/default-event.jpg'}
+                alt={featuredEvent.title}
+                width={700}
+                height={372}
                 className={styles.eventImage}
               />
             </div>
@@ -73,8 +85,8 @@ const Events = () => {
           </div>
 
           <div className={styles.eventsList}>
-            {regularEvents.map((event, index) => (
-              <div key={index} className={styles.eventItem}>
+            {regularEvents.map((event) => (
+              <div key={event.id} className={styles.eventItem}>
                 <div className={styles.eventDate}>
                   <span className={styles.day}>{event.date.split(' ')[0]}</span>
                   <span className={styles.month}>{event.date.split(' ')[1]}</span>
@@ -95,14 +107,14 @@ const Events = () => {
               </div>
             ))}
           </div>
-          
+
           <Link href="/events" className={styles.viewAllLink}>
             View All Events <FaLongArrowAltRight className={styles.arrowIcon} />
           </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Events
+export default Events;

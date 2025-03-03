@@ -1,19 +1,23 @@
-// src/styles/components/Admission.module.scss
 @import '../variables';
 
 .admissionSection {
   padding: 0;
+  margin: 60px 0; // Added margin on top and bottom
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  border-radius: 20px; // Curvy corners
+  overflow: hidden; // Ensures the background images do not break the border-radius
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); // Soft shadow effect
 }
 
 .admissionGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-radius: 20px; // Curvy corners applied to the grid as well
   
   @media (max-width: $breakpoint-md) {
     grid-template-columns: 1fr;
@@ -25,9 +29,12 @@
   background-size: cover;
   background-position: center;
   min-height: 500px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   
   @media (max-width: $breakpoint-md) {
     min-height: 300px;
+    border-radius: 20px 20px 0 0; // Adjusted for mobile
   }
 }
 
@@ -41,9 +48,12 @@
   padding: 90px 60px;
   display: flex;
   align-items: center;
-  
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
   @media (max-width: $breakpoint-md) {
     padding: 60px 30px;
+    border-radius: 0 0 20px 20px; // Adjusted for mobile
   }
 }
 
@@ -75,7 +85,7 @@
   background-color: $primary-color;
   color: white;
   font-weight: 600;
-  border-radius: 3px;
+  border-radius: 8px; // Curvy button
   text-decoration: none;
   transition: all 0.3s ease;
   

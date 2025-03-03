@@ -1,4 +1,3 @@
-// src/components/home/Admission.tsx
 import React from 'react'
 import Link from 'next/link'
 import styles from '@/styles/components/Admission.module.scss'
@@ -8,9 +7,7 @@ const Admission = () => {
     <section className={styles.admissionSection}>
       <div className={styles.container}>
         <div className={styles.admissionGrid}>
-          <div className={styles.leftColumn}>
-            {/* This column is just a background image set in CSS */}
-          </div>
+          <div className={styles.leftColumn}></div> {/* Background Image via CSS */}
           <div className={styles.rightColumn}>
             <div className={styles.contentWrapper}>
               <h2 className={styles.title}>Apply for Admission</h2>

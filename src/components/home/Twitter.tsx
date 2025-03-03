@@ -1,13 +1,13 @@
-// src/components/home/Twitter.tsx
 'use client'
 
 import React from 'react'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import styles from '@/styles/components/Twitter.module.scss'
+import { FaTwitter } from 'react-icons/fa'
 
 const tweets = [
   {
@@ -34,19 +34,22 @@ const Twitter = () => {
   return (
     <div className={styles.twitterSection}>
       <div className={styles.twitterContent}>
+        <h2 className={styles.sectionTitle}>
+          <FaTwitter className={styles.twitterIcon} /> Latest Tweets
+        </h2>
         <Swiper
-          modules={[Navigation]}
-          spaceBetween={0}
+          modules={[Navigation, Autoplay]}
+          spaceBetween={20}
           slidesPerView={1}
-          navigation
+          navigation={{ clickable: true }}
+          autoplay={{ delay: 4000 }}
+          loop
           className={styles.twitterSlider}
         >
           {tweets.map((tweet) => (
             <SwiperSlide key={tweet.id}>
               <div className={styles.tweetItem}>
-                <div className={styles.tweetContent}>
-                  {tweet.content}
-                </div>
+                <p className={styles.tweetContent}>{tweet.content}</p>
                 <div className={styles.tweetDate}>
                   <Link href={tweet.url} target="_blank" rel="noopener noreferrer">
                     {tweet.date}

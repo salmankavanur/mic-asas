@@ -22,8 +22,8 @@ const Partners = () => {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={100} // Adjusted width for smaller logos
-                  height={40} // Adjusted height for smaller logos
+                  width={124} // Adjusted width for smaller logos
+                  height={60} // Adjusted height for smaller logos
                   className={styles.partnerLogo}
                 />
               </Link>

@@ -1,10 +1,10 @@
 // src/styles/components/Partners.module.scss
-@import '../variables';
+@import "../variables";
 
 .partnersSection {
-  padding: 50px 0;
-  background-color: white;
-  border-top: 1px solid $border-color;
+  padding: 30px 0;
+  background-color: #003087; // Dark blue background (already matches the image)
+  border-top: none;
 }
 
 .container {
@@ -16,22 +16,22 @@
 
 .partnersList {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
-  
+  gap: 40px;
+
   @media (max-width: $breakpoint-md) {
-    justify-content: center;
+    gap: 20px;
   }
 }
 
 .partnerItem {
   flex: 0 0 auto;
   transition: $transition-base;
-  
+
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
 }
 
@@ -42,9 +42,9 @@
 .partnerLogo {
   max-width: 100%;
   height: auto;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: $transition-base;
-  
+
   &:hover {
     opacity: 1;
   }

@@ -20,8 +20,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Kingster University - School, College & University',
-  description: 'Kingster University is a premier educational institution offering a wide range of academic programs.',
+  title: 'MIC ASAS - Academy of Sharia and Advanced Studies',
+  description: 'The First Islamic Institute include sanskrit in Syllabus',
 }
 
 export default function RootLayout({

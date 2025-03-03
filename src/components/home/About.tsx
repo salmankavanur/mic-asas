@@ -1,18 +1,18 @@
-// src/components/home/About.tsx
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaLongArrowAltRight } from 'react-icons/fa'
-import styles from '@/styles/components/About.module.scss'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import styles from "@/styles/components/About.module.scss";
 
 const About = () => {
   return (
     <section className={styles.aboutSection}>
+      <div className={styles.overlay}></div> {/* Dark Overlay */}
       <div className={styles.container}>
         <div className={styles.aboutGrid}>
           <div className={styles.leftColumn}>
             <Image 
-              src="/images/logo-white.png" 
+              src="/images/logo.png" 
               alt="Kingster University" 
               width={262} 
               height={35} 
@@ -37,7 +37,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

@@ -10,7 +10,7 @@ const tabsData = [
   {
     id: 'benefits',
     title: 'Benefits',
-    videoThumb: '/images/tab-video-1.jpg',
+    videoThumb: '/images/video-bg.jpg',
     contentTitle: 'Why Choose Kingster?',
     content: `The Kingster University Alumni Association is excited to announce the arrival of KU Alumni Connect. 
       This is a new community building platform for Kingster's alumni. It is the only place online where 
@@ -23,7 +23,7 @@ const tabsData = [
   {
     id: 'development',
     title: 'Self Development',
-    videoThumb: '/images/tab-video-2.jpg',
+    videoThumb: '/images/video-bg.jpg',
     contentTitle: 'Self Development',
     content: `The Kingster University Alumni Association is excited to announce the arrival of KU Alumni Connect. 
       This is a new community building platform for Kingster's alumni. It is the only place online where 
@@ -36,7 +36,7 @@ const tabsData = [
   {
     id: 'spirituality',
     title: 'Spirituality',
-    videoThumb: '/images/tab-video-3.jpg',
+    videoThumb: '/images/video-bg.jpg',
     contentTitle: 'Spirituality',
     content: `The Kingster University Alumni Association is excited to announce the arrival of KU Alumni Connect. 
       This is a new community building platform for Kingster's alumni. It is the only place online where 
@@ -49,7 +49,7 @@ const tabsData = [
   {
     id: 'alumni',
     title: 'Alumni',
-    videoThumb: '/images/tab-video-4.jpg',
+    videoThumb: '/images/video-bg.jpg',
     contentTitle: 'Alumni',
     content: `The Kingster University Alumni Association is excited to announce the arrival of KU Alumni Connect. 
       This is a new community building platform for Kingster's alumni. It is the only place online where 

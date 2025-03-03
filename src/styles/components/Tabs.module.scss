@@ -1,6 +1,6 @@
-// src/styles/components/Tabs.module.scss
 @import '../variables';
 
+// Section Styling
 .tabsSection {
   padding: 80px 0;
   background-color: white;
@@ -18,16 +18,17 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: start;
-  
+
   @media (max-width: $breakpoint-md) {
     grid-template-columns: 1fr;
   }
 }
 
+// Tab Image (Video Thumbnail) Styling
 .tabImageArea {
   position: relative;
   height: 400px;
-  
+
   @media (max-width: $breakpoint-md) {
     height: 300px;
   }
@@ -43,8 +44,8 @@
   background-position: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+
   &.active {
     opacity: 1;
     visibility: visible;
@@ -56,111 +57,95 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: $transition-base;
-  
+  transition: transform 0.3s ease;
+
   &:hover {
     background-color: white;
     transform: translate(-50%, -50%) scale(1.1);
   }
-  
+
   .playIcon {
     color: $primary-color;
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
+// Tab Navigation and Content Styling
 .tabContentArea {
-  .tabsNav {
-    display: flex;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 30px;
-    overflow-x: auto;
-    
-    &::-webkit-scrollbar {
-      height: 3px;
-    }
-    
-    &::-webkit-scrollbar-track {
-      background: $border-color;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-      background: $primary-color;
-    }
-  }
-  
-  .tabButton {
-    padding: 15px 20px;
-    background: none;
-    border: none;
-    font-size: 16px;
-    font-weight: 500;
-    color: $text-color;
-    cursor: pointer;
-    transition: $transition-base;
-    white-space: nowrap;
-    
-    &:hover {
-      color: $primary-color;
-    }
-    
-    &.active {
-      color: $primary-color;
-      border-bottom: 2px solid $primary-color;
-    }
+  display: flex;
+  flex-direction: column;
+}
+
+.tabsNav {
+  display: flex;
+  border-bottom: 2px solid $border-color;
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.tabButton {
+  padding: 15px 25px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: $text-color;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+
+  &:hover,
+  &.active {
+    color: $primary-color;
+    border-bottom: 3px solid $primary-color;
   }
 }
 
 .tabContentWrapper {
-  position: relative;
+  min-height: 200px;
 }
 
 .tabContent {
+  display: none;
   opacity: 0;
-  height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease;
-  
+  transition: opacity 0.4s ease;
+
   &.active {
+    display: block;
     opacity: 1;
-    height: auto;
-  }
-  
-  .contentTitle {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: $heading-color;
-  }
-  
-  .contentBody {
-    color: $text-color;
-    line-height: 1.7;
-    
-    p {
-      margin-bottom: 15px;
-    }
   }
 }
 
-// Video Modal - Same as VideoTour component
+.contentTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.contentBody {
+  font-size: 16px;
+  line-height: 1.6;
+  color: $text-color;
+}
+
+// Premium Video Modal Styling
 .videoModal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 
 .videoModalOverlay {
@@ -169,51 +154,144 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
 }
 
 .videoModalContent {
   position: relative;
   width: 90%;
-  max-width: 1200px;
-  background-color: #000;
-  border-radius: 5px;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  z-index: 2;
+  animation: slideIn 0.3s ease;
+
+  @media (max-width: $breakpoint-md) {
+    width: 95%;
+    max-width: 600px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: $primary-color;
+  color: white;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .closeButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  background: rgba(255, 255, 255, 0.2);
+  background: none;
   border: none;
-  border-radius: 50%;
-  color: white;
   font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: white;
   cursor: pointer;
-  z-index: 3;
-  
+  transition: color 0.3s ease;
+
   &:hover {
-    background: rgba(255, 255, 255, 0.4);
+    color: $secondary-color;
   }
 }
 
 .videoWrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   height: 0;
-  
+  background-color: black;
+
   iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+  }
+}
+
+.modalFooter {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $border-color;
+  background-color: #f9f9f9;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+.actionButton {
+  padding: 8px 15px;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.shareSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    font-size: 14px;
+    color: $text-color;
+  }
+}
+
+.shareButton {
+  padding: 8px 15px;
+  background-color: $secondary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    width: 100%;
+    text-align: center;
   }
 }

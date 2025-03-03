@@ -1,4 +1,3 @@
-// src/components/home/Tabs.tsx
 'use client'
 
 import React, { useState } from 'react'
@@ -13,85 +12,69 @@ const tabsData = [
     videoThumb: '/images/video-bg.jpg',
     contentTitle: 'Why Choose Kingster?',
     content: `The Kingster University Alumni Association is excited to announce the arrival of KU Alumni Connect. 
-      This is a new community building platform for Kingster's alumni. It is the only place online where 
-      you can find, and connect with, all 90,000 Kingster's alumni. All alumni are automatically enrolled!
+      This is a new community-building platform for Kingster's alumni. It is the only place online where 
+      you can find and connect with all 90,000 Kingster's alumni. All alumni are automatically enrolled!
 
-      Kingster University was established by John Smith in 1920 for the public benefit and it is recognized globally. 
+      Kingster University was established by John Smith in 1920 for the public benefit and is recognized globally. 
       Throughout our great history, Kingster has offered access to a wide range of academic opportunities. 
-      As a world leader in higher education, the University has pioneered change in the sector.`
+      As a world leader in higher education, the University has pioneered change in the sector.`,
+    videoTitle: 'Anything Could Happen at Kingster',
   },
   {
     id: 'development',
     title: 'Self Development',
     videoThumb: '/images/video-bg.jpg',
     contentTitle: 'Self Development',
-    content: `The Kingster University Alumni Association is excited to announce the arrival of KU Alumni Connect. 
-      This is a new community building platform for Kingster's alumni. It is the only place online where 
-      you can find, and connect with, all 90,000 Kingster's alumni. All alumni are automatically enrolled!
-
-      Kingster University was established by John Smith in 1920 for the public benefit and it is recognized globally. 
-      Throughout our great history, Kingster has offered access to a wide range of academic opportunities. 
-      As a world leader in higher education, the University has pioneered change in the sector.`
+    content: `Develop yourself academically and professionally at Kingster University. 
+      We provide a wide range of courses that empower students with skills to excel in any field.`,
+    videoTitle: 'Self Development at Kingster',
   },
   {
     id: 'spirituality',
     title: 'Spirituality',
     videoThumb: '/images/video-bg.jpg',
     contentTitle: 'Spirituality',
-    content: `The Kingster University Alumni Association is excited to announce the arrival of KU Alumni Connect. 
-      This is a new community building platform for Kingster's alumni. It is the only place online where 
-      you can find, and connect with, all 90,000 Kingster's alumni. All alumni are automatically enrolled!
-
-      Kingster University was established by John Smith in 1920 for the public benefit and it is recognized globally. 
-      Throughout our great history, Kingster has offered access to a wide range of academic opportunities. 
-      As a world leader in higher education, the University has pioneered change in the sector.`
+    content: `Discover personal growth and spirituality at Kingster University. 
+      Our curriculum ensures a balance between academic excellence and personal well-being.`,
+    videoTitle: 'Spirituality at Kingster',
   },
   {
     id: 'alumni',
     title: 'Alumni',
     videoThumb: '/images/video-bg.jpg',
-    contentTitle: 'Alumni',
-    content: `The Kingster University Alumni Association is excited to announce the arrival of KU Alumni Connect. 
-      This is a new community building platform for Kingster's alumni. It is the only place online where 
-      you can find, and connect with, all 90,000 Kingster's alumni. All alumni are automatically enrolled!
-
-      Kingster University was established by John Smith in 1920 for the public benefit and it is recognized globally. 
-      Throughout our great history, Kingster has offered access to a wide range of academic opportunities. 
-      As a world leader in higher education, the University has pioneered change in the sector.`
-  }
+    contentTitle: 'Alumni Network',
+    content: `Join a thriving network of professionals. Kingster University has a strong global alumni community, 
+      opening doors to career growth and opportunities worldwide.`,
+    videoTitle: 'Kingster Alumni Network',
+  },
 ]
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(tabsData[0].id)
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
 
-  const handleTabClick = (tabId: string) => {
-    setActiveTab(tabId)
-  }
-
-  const openVideoModal = () => {
-    setIsVideoModalOpen(true)
-  }
-
-  const closeVideoModal = () => {
-    setIsVideoModalOpen(false)
-  }
+  // Find the active tab's data to dynamically set the video title
+  const activeTabData = tabsData.find(tab => tab.id === activeTab)
 
   return (
     <section className={styles.tabsSection}>
       <div className={styles.container}>
         <div className={styles.tabsWrapper}>
+          {/* Video Thumbnail Section */}
           <div className={styles.tabImageArea}>
             {tabsData.map(tab => (
-              <div 
+              <div
                 key={tab.id}
                 className={`${styles.tabImage} ${activeTab === tab.id ? styles.active : ''}`}
                 style={{ backgroundImage: `url(${tab.videoThumb})` }}
               >
-                <Link 
-                  href="#" 
-                  className={styles.playButton} 
-                  onClick={(e) => { e.preventDefault(); openVideoModal(); }}
+                <Link
+                  href="#"
+                  className={styles.playButton}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsVideoModalOpen(true);
+                  }}
                 >
                   <FaPlay className={styles.playIcon} />
                 </Link>
@@ -99,31 +82,30 @@ const Tabs = () => {
             ))}
           </div>
 
+          {/* Tab Content Section */}
           <div className={styles.tabContentArea}>
+            {/* Tab Navigation */}
             <div className={styles.tabsNav}>
               {tabsData.map(tab => (
-                <button 
+                <button
                   key={tab.id}
                   className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ''}`}
-                  onClick={() => handleTabClick(tab.id)}
+                  onClick={() => setActiveTab(tab.id)}
                 >
                   {tab.title}
                 </button>
               ))}
             </div>
-            
+
+            {/* Tab Content */}
             <div className={styles.tabContentWrapper}>
               {tabsData.map(tab => (
-                <div 
+                <div
                   key={tab.id}
                   className={`${styles.tabContent} ${activeTab === tab.id ? styles.active : ''}`}
                 >
                   <h3 className={styles.contentTitle}>{tab.contentTitle}</h3>
-                  <div className={styles.contentBody}>
-                    {tab.content.split('\n\n').map((paragraph, idx) => (
-                      <p key={idx}>{paragraph}</p>
-                    ))}
-                  </div>
+                  <p className={styles.contentBody}>{tab.content}</p>
                 </div>
               ))}
             </div>
@@ -131,21 +113,40 @@ const Tabs = () => {
         </div>
       </div>
 
+      {/* Premium Video Modal */}
       {isVideoModalOpen && (
         <div className={styles.videoModal}>
-          <div className={styles.videoModalOverlay} onClick={closeVideoModal}></div>
+          <div className={styles.videoModalOverlay} onClick={() => setIsVideoModalOpen(false)}></div>
           <div className={styles.videoModalContent}>
-            <button className={styles.closeButton} onClick={closeVideoModal}>×</button>
+            {/* Modal Header */}
+            <div className={styles.modalHeader}>
+              <h3 className={styles.modalTitle}>{activeTabData.videoTitle}</h3>
+              <button className={styles.closeButton} onClick={() => setIsVideoModalOpen(false)}>
+                ×
+              </button>
+            </div>
+
+            {/* Video Player */}
             <div className={styles.videoWrapper}>
               <iframe
-                width="1200"
-                height="675"
+                width="100%"
+                height="100%"
                 src="https://www.youtube.com/embed/C5pKtnmHTxg?autoplay=1"
                 title="Kingster University Video"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+            </div>
+
+            {/* Modal Footer */}
+            <div className={styles.modalFooter}>
+              <button className={styles.actionButton}>Download this video</button>
+              <button className={styles.actionButton}>Read the latest from Kingster</button>
+              <div className={styles.shareSection}>
+                <span>Watch, Rate, Share</span>
+                <button className={styles.shareButton}>Share</button>
+              </div>
             </div>
           </div>
         </div>

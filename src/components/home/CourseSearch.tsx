@@ -1,8 +1,8 @@
 // src/components/home/CourseSearch.tsx
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import styles from '@/styles/components/CourseSearch.module.scss'
+import React, { useState } from "react";
+import styles from "@/styles/components/CourseSearch.module.scss";
 
 type FormValues = {
   keywords: string;
@@ -13,58 +13,57 @@ type FormValues = {
   instructor: string;
   semester: string;
   credit: string;
-}
+};
 
 const initialFormValues: FormValues = {
-  keywords: '',
-  courseId: '',
-  department: '',
-  campus: '',
-  level: '',
-  instructor: '',
-  semester: '',
-  credit: ''
-}
+  keywords: "",
+  courseId: "",
+  department: "",
+  campus: "",
+  level: "",
+  instructor: "",
+  semester: "",
+  credit: "",
+};
 
 const CourseSearch = () => {
-  const [formValues, setFormValues] = useState<FormValues>(initialFormValues)
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formValues, setFormValues] = useState<FormValues>(initialFormValues);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormValues(prev => ({
+    const { name, value } = e.target;
+    setFormValues((prev) => ({
       ...prev,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
+    e.preventDefault();
+    setIsSubmitting(true);
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    // In a real application, this would navigate to search results page
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // In a real application, this would navigate to a search results page
     // with the form values as query parameters
-    console.log('Search form submitted with values:', formValues)
-    
-    setIsSubmitting(false)
-  }
+    console.log("Search form submitted with values:", formValues);
+
+    setIsSubmitting(false);
+  };
 
   return (
     <section className={styles.courseSearchSection}>
-      <div className={styles.courseSearchBg}></div>
       <div className={styles.container}>
         <div className={styles.courseSearchContent}>
           <h2 className={styles.sectionTitle}>Search For Courses</h2>
-          
+
           <form className={styles.courseForm} onSubmit={handleSubmit}>
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <input 
-                  type="text" 
-                  placeholder="Keywords" 
+                <input
+                  type="text"
+                  placeholder="Keywords"
                   name="keywords"
                   value={formValues.keywords}
                   onChange={handleInputChange}
@@ -72,9 +71,9 @@ const CourseSearch = () => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <input 
-                  type="text" 
-                  placeholder="Course ID" 
+                <input
+                  type="text"
+                  placeholder="Course ID"
                   name="courseId"
                   value={formValues.courseId}
                   onChange={handleInputChange}
@@ -82,11 +81,11 @@ const CourseSearch = () => {
                 />
               </div>
             </div>
-            
+
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <select 
-                  name="department" 
+                <select
+                  name="department"
                   value={formValues.department}
                   onChange={handleInputChange}
                   className={styles.formControl}
@@ -100,24 +99,24 @@ const CourseSearch = () => {
                 </select>
               </div>
               <div className={styles.formGroup}>
-                <select 
-                  name="campus" 
+                <select
+                  name="campus"
                   value={formValues.campus}
                   onChange={handleInputChange}
                   className={styles.formControl}
                 >
                   <option value="">Campus</option>
-                  <option value="admans-hall">Adman&apos;s Hall</option>
-                  <option value="kingsters-80">Kingster&apos;s 80</option>
+                  <option value="admans-hall">Adman's Hall</option>
+                  <option value="kingsters-80">Kingster's 80</option>
                   <option value="ku2-hill">KU2 Hill</option>
                 </select>
               </div>
             </div>
-            
+
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <select 
-                  name="level" 
+                <select
+                  name="level"
                   value={formValues.level}
                   onChange={handleInputChange}
                   className={styles.formControl}
@@ -128,8 +127,8 @@ const CourseSearch = () => {
                 </select>
               </div>
               <div className={styles.formGroup}>
-                <select 
-                  name="instructor" 
+                <select
+                  name="instructor"
                   value={formValues.instructor}
                   onChange={handleInputChange}
                   className={styles.formControl}
@@ -143,11 +142,11 @@ const CourseSearch = () => {
                 </select>
               </div>
             </div>
-            
+
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <select 
-                  name="semester" 
+                <select
+                  name="semester"
                   value={formValues.semester}
                   onChange={handleInputChange}
                   className={styles.formControl}
@@ -158,8 +157,8 @@ const CourseSearch = () => {
                 </select>
               </div>
               <div className={styles.formGroup}>
-                <select 
-                  name="credit" 
+                <select
+                  name="credit"
                   value={formValues.credit}
                   onChange={handleInputChange}
                   className={styles.formControl}
@@ -171,21 +170,17 @@ const CourseSearch = () => {
                 </select>
               </div>
             </div>
-            
+
             <div className={styles.formSubmit}>
-              <button 
-                type="submit" 
-                className={styles.submitButton}
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Searching...' : 'Search Courses'}
+              <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+                {isSubmitting ? "Searching..." : "Search Courses"}
               </button>
             </div>
           </form>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CourseSearch
+export default CourseSearch;

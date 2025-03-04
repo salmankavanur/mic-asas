@@ -10,7 +10,7 @@ import styles from '@/styles/components/Header.module.scss'
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -19,7 +19,7 @@ const Header = () => {
         setIsScrolled(false)
       }
     }
-    
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -34,8 +34,8 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.topBarInner}>
             <div className={styles.topBarLeft}>
-              <span><FaEnvelopeOpen /> micthrissur@gmail.com </span>
-              <span><FaPhone /> 0487 244 58 28 </span>
+              <span><FaEnvelopeOpen /> contact@KUTHEME.edu </span>
+              <span><FaPhone /> +1-3435-2356-222 </span>
             </div>
             <div className={styles.topBarRight}>
               <ul className={styles.topBarMenu}>
@@ -56,7 +56,7 @@ const Header = () => {
               <Link href="/">
                 <Image 
                   src="/images/logo.webp" 
-                  alt="MIC ASAS" 
+                  alt="Kingster University" 
                   width={180} 
                   height={40} 
                   priority
@@ -67,20 +67,22 @@ const Header = () => {
             <div className={styles.navigation}>
               <nav className={styles.mainMenu}>
                 <ul>
-                  <li className={styles.menuItemHasChildren}>
-                    <Link href="/">Home <FaChevronDown /></Link>
-                    <ul className={styles.subMenu}>
-                      <li><Link href="/">Homepage 1</Link></li>
-                      <li><Link href="/homepage-2">Homepage 2</Link></li>
-                    </ul>
+                  <li className={styles.menuItem}>
+                    <Link href="/">Home</Link>
                   </li>
                   <li className={styles.menuItemHasChildren}>
                     <Link href="/pages">Pages <FaChevronDown /></Link>
                     <ul className={styles.subMenu}>
                       <li><Link href="/about-us">About KU</Link></li>
                       <li><Link href="/blog">Blog</Link></li>
+                      <li><Link href="/features">Features</Link></li>
                       <li><Link href="/contact">Contact</Link></li>
+                      <li><Link href="/shop">Shop</Link></li>
                       <li><Link href="/gallery">Gallery</Link></li>
+                      <li><Link href="/price-table">Price Table</Link></li>
+                      <li><Link href="/maintenance">Maintenance</Link></li>
+                      <li><Link href="/coming-soon">Coming Soon</Link></li>
+                      <li><Link href="/404">404 Page</Link></li>
                     </ul>
                   </li>
                   <li className={styles.menuItemHasChildren}>
@@ -97,17 +99,21 @@ const Header = () => {
                       <li><Link href="/apply-to-kingster">Apply To Kingster</Link></li>
                       <li><Link href="/campus-tour">Campus Tour</Link></li>
                       <li><Link href="/scholarships">Scholarships</Link></li>
+                      <li><Link href="/athletics">Athletics</Link></li>
+                      <li><Link href="/give-to-kingster">Give To Kingster</Link></li>
+                      <li><Link href="/alumni">Alumni</Link></li>
+                      <li><Link href="/event-calendar">Event Calendar</Link></li>
                     </ul>
                   </li>
-                  <li className={styles.menuItemHasChildren}>
-                    <Link href="/courses">Courses <FaChevronDown /></Link>
-                    <ul className={styles.subMenu}>
-                      <li><Link href="/course-list-1">Course List 1</Link></li>
-                      <li><Link href="/course-list-2">Course List 2</Link></li>
-                    </ul>
+                  <li className={styles.menuItem}>
+                    <Link href="/courses">Courses</Link>
                   </li>
-                  <li><Link href="/athletics">Athletics</Link></li>
-                  <li><Link href="/university-life">University Life</Link></li>
+                  <li className={styles.menuItem}>
+                    <Link href="/athletics">Athletics</Link>
+                  </li>
+                  <li className={styles.menuItem}>
+                    <Link href="/university-life">University Life</Link>
+                  </li>
                 </ul>
               </nav>
               <div className={styles.search}>
@@ -129,21 +135,51 @@ const Header = () => {
           <ul>
             <li>
               <Link href="/">Home</Link>
-              <ul>
-                <li><Link href="/">Homepage 1</Link></li>
-                <li><Link href="/homepage-2">Homepage 2</Link></li>
-              </ul>
             </li>
             <li>
               <Link href="/pages">Pages</Link>
               <ul>
                 <li><Link href="/about-us">About KU</Link></li>
                 <li><Link href="/blog">Blog</Link></li>
+                <li><Link href="/features">Features</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/shop">Shop</Link></li>
                 <li><Link href="/gallery">Gallery</Link></li>
+                <li><Link href="/price-table">Price Table</Link></li>
+                <li><Link href="/maintenance">Maintenance</Link></li>
+                <li><Link href="/coming-soon">Coming Soon</Link></li>
+                <li><Link href="/404">404 Page</Link></li>
               </ul>
             </li>
-            {/* More mobile menu items... */}
+            <li>
+              <Link href="/academics">Academics</Link>
+              <ul>
+                <li><Link href="/academics/undergraduate">Undergraduate</Link></li>
+                <li><Link href="/academics/graduate">Graduate Program</Link></li>
+                <li><Link href="/academics/resources">Resources</Link></li>
+              </ul>
+            </li>
+            <li>
+              <Link href="/admissions">Admissions</Link>
+              <ul>
+                <li><Link href="/apply-to-kingster">Apply To Kingster</Link></li>
+                <li><Link href="/campus-tour">Campus Tour</Link></li>
+                <li><Link href="/scholarships">Scholarships</Link></li>
+                <li><Link href="/athletics">Athletics</Link></li>
+                <li><Link href="/give-to-kingster">Give To Kingster</Link></li>
+                <li><Link href="/alumni">Alumni</Link></li>
+                <li><Link href="/event-calendar">Event Calendar</Link></li>
+              </ul>
+            </li>
+            <li>
+              <Link href="/courses">Courses</Link>
+            </li>
+            <li>
+              <Link href="/athletics">Athletics</Link>
+            </li>
+            <li>
+              <Link href="/university-life">University Life</Link>
+            </li>
           </ul>
         </div>
       )}

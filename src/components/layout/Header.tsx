@@ -34,8 +34,8 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.topBarInner}>
             <div className={styles.topBarLeft}>
-              <span><FaEnvelopeOpen /> contact@KUTHEME.edu </span>
-              <span><FaPhone /> +1-3435-2356-222 </span>
+              <span><FaEnvelopeOpen /> micthrissur@gmail.com </span>
+              <span><FaPhone /> 0487 2445828 </span>
             </div>
             <div className={styles.topBarRight}>
               <ul className={styles.topBarMenu}>
@@ -43,7 +43,7 @@ const Header = () => {
                 <li><Link href="/calendar">Calendar</Link></li>
                 <li><Link href="/portal">Portal</Link></li>
               </ul>
-              <Link href="/support" className={styles.supportButton}>Support KU</Link>
+              <Link href="/support" className={styles.supportButton}>Support ASAS</Link>
             </div>
           </div>
         </div>
